@@ -12,7 +12,7 @@ export const RegistrationPage: React.FC<IRegistrationPage> = ({navigation}) => {
   return (
     <View style={styles.page}>
     <View style={styles.viewRegistrationForm}>
-      <RegistrationForm />
+      <RegistrationForm onClick={() => navigation.navigate('LoginPage')} />
       <TouchableOpacity onPress={() => navigation.navigate('LoginPage')} style={styles.buttonRegistration}>
         <Text style={styles.buttonRegistrationText}>Войти</Text>
       </TouchableOpacity>

@@ -15,7 +15,7 @@ import { TRegistrationForm } from "../../models/auth/RegistrationForm";
 
 import {styles} from "./styles"
 
-const RegistrationForm: React.FC = () => {
+const RegistrationForm = ({onClick}: {onClick: () => void}) => {
   const [emailText, setEmail] = React.useState("");
   const [passwordText, setPassword] = React.useState("");
   const [firstNameText, setFirstNameText] = React.useState("");
@@ -87,12 +87,7 @@ const RegistrationForm: React.FC = () => {
       <TouchableOpacity
         style={styles.buttonAuth}
         onPress={() => {
-          handleRegistration({
-            email: emailText,
-            password: passwordText,
-            firstname: firstNameText,
-            lastname: lastNameText
-          });
+         onClick()
         }}
       >
         <Text style={styles.buttonAuthText}>Зарегистрироваться</Text>

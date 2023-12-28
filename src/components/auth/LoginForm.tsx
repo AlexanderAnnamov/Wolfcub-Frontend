@@ -15,7 +15,7 @@ import type { TLoginForm } from "../../models/auth/LoginForm";
 
 import { styles } from "./styles"
 
-const LoginForm: React.FC = () => {
+const LoginForm = ({onClick}: {onClick: () => void}) => {
   const [emailText, setEmail] = React.useState("");
   const [passwordText, setPassword] = React.useState("");
   const [checked, setCheked] = React.useState(false);
@@ -64,11 +64,9 @@ const LoginForm: React.FC = () => {
       <TouchableOpacity
         style={styles.buttonAuth}
         onPress={() => {
-          handleLogin({
-            email: emailText,
-            password: passwordText,
-          });
-        }}
+         onClick()
+          
+           }}
       >
         <Text style={styles.buttonAuthText}>Войти</Text>
       </TouchableOpacity>

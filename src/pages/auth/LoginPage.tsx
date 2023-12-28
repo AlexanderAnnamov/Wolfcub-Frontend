@@ -15,7 +15,7 @@ export const LoginPage: React.FC<ILoginPage> = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.viewLoginForm}>
-        <LoginForm />
+        <LoginForm onClick={() => navigation.navigate('Learning')} />
         <TouchableOpacity onPress={() => navigation.navigate('RegistrationPage')} style={styles.buttonRegistration}>
         <Text style={styles.buttonRegistrationText}>Регистрация</Text>
       </TouchableOpacity>
