@@ -4,6 +4,7 @@ import { LoginPage, RegistrationPage } from "../pages/auth";
 import { LearningPage, LessonsPage } from "../pages/learning";
 import { TestsPage } from "../pages/tests";
 import { TestAnalitic } from "../pages/tests/TestAnalitic";
+import { ResultsPage } from "../pages/results/results";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const Routes = () => {
     <Stack.Screen name="LessonsPage" component={LessonsPage}/>
     <Stack.Screen name="TestsPage" component={TestsPage}/>
     <Stack.Screen name="TestAnalitic" component={TestAnalitic}/>
+    <Stack.Screen name="Results" component={ResultsPage}/>
    
  
     <Stack.Screen name="RegistrationPage" component={RegistrationPage} />

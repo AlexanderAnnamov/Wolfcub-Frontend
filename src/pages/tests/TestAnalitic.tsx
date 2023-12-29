@@ -31,7 +31,7 @@ const useCountdown = (initialSeconds: any) => {
 
 
 
-export const TestAnalitic = () => {
+export const TestAnalitic = ({navigation}: {navigation: any}) => {
     const [question, setQuestion] = React.useState(1);
     const [checked, setChecked] = React.useState('');
 
@@ -343,7 +343,7 @@ export const TestAnalitic = () => {
                       onPress={() => setChecked('five')} /><Text>1971</Text>
               </View><View style={styles.btnPanels}>
                   <TouchableOpacity style={styles.nextQuestion} onPress={prevQuestion}><Text style={styles.questionResponse}>Prev</Text></TouchableOpacity>
-                  <TouchableOpacity style={styles.nextQuestion} onPress={nextQuestion}><Text style={styles.questionResponse}>Завершить</Text></TouchableOpacity>
+                  <TouchableOpacity style={styles.nextQuestion} onPress={() => navigation.navigate('TestsPage')}><Text style={styles.questionResponse}>Завершить</Text></TouchableOpacity>
               </View></>)}
       
       

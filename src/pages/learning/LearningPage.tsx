@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Dimensions, Text, TouchableOpacity, Image } from 'react-native'
 import { Course } from '../../components/learnig/Course'
-import { LearnMenu, LogoutMenu, ResultsMenu, TestMenu } from '../../../assets/img';
+import { IconWolf, LearnMenu, LogoutMenu, ResultsMenu, TestMenu } from '../../../assets/img';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -23,7 +23,10 @@ const lessons = [
 export const LearningPage = ({navigation}: {navigation: any}) => {
   return (
     <View style={styles.wrapperPage}>
-      <Text style={styles.title}>Занятия</Text>
+       <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+        <Text style={styles.title}>Занятия</Text>
+        <Image style={{width:35, height: 35}} source={IconWolf}/>
+      </View>
       {lessons.map(lesson => {
         return   <TouchableOpacity onPress={() => navigation.navigate('LessonsPage')}  style={styles.wrapper}>
         <Text style={styles.name}>{lesson.name}</Text>
@@ -36,7 +39,7 @@ export const LearningPage = ({navigation}: {navigation: any}) => {
        <TouchableOpacity onPress={() => navigation.navigate('TestsPage')} >
         <Image style={styles.imgMenu} source={TestMenu}/>
        </TouchableOpacity>
-       <TouchableOpacity onPress={() => navigation.navigate('TestsPage')} >
+       <TouchableOpacity onPress={() => navigation.navigate('Results')} >
         <Image style={styles.imgMenu} source={ResultsMenu}/>
        </TouchableOpacity>
        <TouchableOpacity onPress={() => navigation.navigate('Learning')} >
@@ -63,6 +66,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Montserrat",
     fontSize: 25,
+    color: '#03dac4'
   
   },
   wrapper: {
@@ -75,8 +79,10 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     rowGap: 5,
     justifyContent: 'flex-start',
+    borderWidth: 1,
+    borderColor: '#03dac4',
     borderRadius: 20,
-    // shadowColor: "#000",
+    shadowColor: "#03dac4",
     shadowOffset: {
       width: 0,
       height: 0,
